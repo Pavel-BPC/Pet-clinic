@@ -1,9 +1,6 @@
 package com.blinets.sfpetclinic;
 
-import com.blinets.sfpetclinic.controllers.ConstructorInjectedController;
-import com.blinets.sfpetclinic.controllers.MyController;
-import com.blinets.sfpetclinic.controllers.PropertyInjectedController;
-import com.blinets.sfpetclinic.controllers.SetterInjectedController;
+import com.blinets.sfpetclinic.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class SfPetClinicApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfPetClinicApplication.class, args);
 
+		System.out.println("------- Profile Bean");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
