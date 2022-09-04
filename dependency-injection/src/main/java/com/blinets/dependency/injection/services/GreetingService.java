@@ -1,4 +1,4 @@
-package com.blinets.sfpetclinic.services;
+package com.blinets.dependency.injection.services;
 
 public interface GreetingService {
 

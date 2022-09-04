@@ -1,6 +1,6 @@
-package com.blinets.sfpetclinic.controllers;
+package com.blinets.dependency.injection.controllers;
 
-import com.blinets.sfpetclinic.services.GreetingService;
+import com.blinets.dependency.injection.services.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
