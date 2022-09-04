@@ -1,7 +1,6 @@
 package com.blinets.dependency.injection;
 
 import com.blinets.dependency.injection.controllers.*;
-import com.blinets.sfpetclinic.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
