@@ -1,4 +1,4 @@
-package com.blinets.sfpetclinic.model;
+package com.blinets.pet.clinic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pet {
-
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;

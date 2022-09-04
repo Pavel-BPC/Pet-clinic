@@ -1,4 +1,4 @@
-package com.blinets.sfpetclinic.model;
+package com.blinets.pet.clinic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PetType {
-
     private String name;
-
 }
