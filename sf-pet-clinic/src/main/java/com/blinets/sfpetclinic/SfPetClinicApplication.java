@@ -1,13 +1,36 @@
 package com.blinets.sfpetclinic;
 
+import com.blinets.sfpetclinic.controllers.ConstructorInjectedController;
+import com.blinets.sfpetclinic.controllers.MyController;
+import com.blinets.sfpetclinic.controllers.PropertyInjectedController;
+import com.blinets.sfpetclinic.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SfPetClinicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SfPetClinicApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(SfPetClinicApplication.class, args);
+
+
+		MyController myController = (MyController) ctx.getBean("myController");
+
+		System.out.println("------- Primary Bean");
+		System.out.println(myController.sayHello());
+
+		System.out.println("------ Property");
+		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+		System.out.println(propertyInjectedController.getGreeting());
+
+		System.out.println("--------- Setter");
+		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
+		System.out.println(setterInjectedController.getGreeting());
+
+		System.out.println("-------- Constructor" );
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
+		System.out.println(constructorInjectedController.getGreeting());
 	}
 
 }
