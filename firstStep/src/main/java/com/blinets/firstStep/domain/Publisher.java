@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -26,6 +27,12 @@ public class Publisher {
 
     @OneToMany
     @JoinColumn(name = "publisher_id")
-    private Set<Book> books = new HashSet<>();
+    private Set<Book> books;
 
+    public void addBook(Book book) {
+        if (Objects.isNull(this.books)) {
+            this.books = new HashSet<>();
+        }
+        this.books.add(book);
+    }
 }
