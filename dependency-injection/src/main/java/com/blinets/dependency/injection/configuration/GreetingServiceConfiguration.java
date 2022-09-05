@@ -5,12 +5,10 @@ import com.blinets.dependency.injection.repositories.GreetingRepository;
 import com.blinets.dependency.injection.services.greeting.*;
 import com.blinets.dependency.injection.services.pet.PetService;
 import com.blinets.dependency.injection.services.pet.PetServiceFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@ImportResource("classpath:bean-config.xml")
 public class GreetingServiceConfiguration {
 
 
@@ -56,10 +54,10 @@ public class GreetingServiceConfiguration {
         return new I18NSpanishService();
     }
 
-    @Bean
-    ConstructorGreetingService constructorGreetingService() {
-        return new ConstructorGreetingService();
-    }
+//    @Bean
+//    ConstructorGreetingService constructorGreetingService() {
+//        return new ConstructorGreetingService();
+//    }
 
     @Bean
     PropertyInjectedGreetingService propertyInjectedGreetingService() {
