@@ -1,8 +1,6 @@
 package com.blinets.dependency.injection.services;
 
-import org.springframework.stereotype.Service;
-
-@Service
+//@Service
 public class SetterInjectedGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
