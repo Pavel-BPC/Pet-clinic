@@ -1,4 +1,4 @@
-package com.blinets.dependency.injection.services;
+package com.blinets.dependency.injection.services.greeting;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

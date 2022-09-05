@@ -32,6 +32,12 @@ public class SfPetClinicApplication {
         System.out.println("-------- Constructor");
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+        System.out.println("-------- Best Pet");
+        PetController petController = ctx.getBean("petController", PetController.class);
+        System.out.println(petController.whichPetIsTheBest());
+
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.blinets.dependency.injection.services;
+package com.blinets.dependency.injection.services.greeting;
 
 //@Profile("ES")
 //@Service("i18nService")

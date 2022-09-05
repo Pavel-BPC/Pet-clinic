@@ -1,6 +1,6 @@
 package com.blinets.dependency.injection.controllers;
 
-import com.blinets.dependency.injection.services.GreetingService;
+import com.blinets.dependency.injection.services.greeting.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
