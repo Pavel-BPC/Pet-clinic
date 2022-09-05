@@ -1,6 +1,5 @@
-package com.example.component.scan;
+package com.blinets.dependency.injection.services;
 
-import com.blinets.dependency.injection.services.GreetingService;
 import org.springframework.stereotype.Service;
 
 @Service
