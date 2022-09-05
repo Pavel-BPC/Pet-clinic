@@ -4,7 +4,9 @@ import com.blinets.dependency.injection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"com.example.component.scan", "com.blinets.dependency.injection"})
 @SpringBootApplication
 public class SfPetClinicApplication {
 
