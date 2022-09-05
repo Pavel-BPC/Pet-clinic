@@ -1,5 +1,7 @@
 package com.blinets.dependency.injection.configuration;
 
+import com.blinets.dependency.injection.repositories.GreetingEnglishRepositoryImpl;
+import com.blinets.dependency.injection.repositories.GreetingRepository;
 import com.blinets.dependency.injection.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,9 +19,15 @@ public class GreetingServiceConfiguration {
 
     @Profile({"EN", "default"})
     @Bean
-    I18nEnglishGreetingService i18nService(){
-        return new I18nEnglishGreetingService();
+    I18nEnglishGreetingService i18nService(GreetingRepository greetingRepository){
+        return new I18nEnglishGreetingService(greetingRepository);
     }
+
+    @Bean
+    GreetingRepository greetingRepository(){
+        return new GreetingEnglishRepositoryImpl();
+    }
+
 
     @Profile("ES")
     @Bean(name = "i18nService")
