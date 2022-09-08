@@ -1,12 +1,13 @@
 package com.blinets.pet.clinic.services.map;
 
 import com.blinets.pet.clinic.model.Vet;
-import com.blinets.pet.clinic.services.CrudService;
+import com.blinets.pet.clinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Vet save(Vet entity) {
