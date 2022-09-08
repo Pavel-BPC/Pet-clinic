@@ -11,7 +11,7 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @ImportResource("classpath:bean-config.xml")
-@PropertySource("classpath:datasource.properties")
+//@PropertySource("classpath:datasource.properties")
 public class GreetingServiceConfiguration {
 
 
