@@ -14,7 +14,7 @@ import org.springframework.context.annotation.*;
 public class GreetingServiceConfiguration {
 
 
-//    @Bean
+    //    @Bean
 //    FakeDataSource fakeDataSource(@Value("${blinets.username}") String username,
 //                                  @Value("${blinets.password}") String password,
 //                                  @Value("${blinets.jdbcurl}") String jdbcurl) {

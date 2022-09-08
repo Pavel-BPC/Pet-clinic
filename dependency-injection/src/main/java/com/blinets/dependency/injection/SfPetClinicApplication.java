@@ -58,11 +58,17 @@ public class SfPetClinicApplication {
         System.out.println(fakeDataSource.getPassword());
         System.out.println(fakeDataSource.getJdbcUrl());
 
-        System.out.println("---- PropertiesBindingConfiguration ---------");
+        System.out.println("---- Properties Binding Configuration ---------");
         PropertiesBindingConfiguration propertiesBindingConfiguration = ctx.getBean(PropertiesBindingConfiguration.class);
         System.out.println(propertiesBindingConfiguration.getUsername());
         System.out.println(propertiesBindingConfiguration.getPassword());
         System.out.println(propertiesBindingConfiguration.getJdbcUrl());
+
+//        System.out.println("---- Properties Binding Constructor Configuration ---------");
+//        PropertiesBindingConstructorConfiguration propertiesBindingConstructorConfiguration = ctx.getBean(PropertiesBindingConstructorConfiguration.class);
+//        System.out.println(propertiesBindingConstructorConfiguration.getUsername());
+//        System.out.println(propertiesBindingConstructorConfiguration.getPassword());
+//        System.out.println(propertiesBindingConstructorConfiguration.getJdbcUrl());
 
     }
 
