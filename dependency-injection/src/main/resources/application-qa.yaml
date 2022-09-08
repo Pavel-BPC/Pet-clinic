@@ -1,0 +1,4 @@
+blinets:
+  username: pavel-QA
+  password: Blinets-QA
+  jdbcurl: MyUrl-QA
