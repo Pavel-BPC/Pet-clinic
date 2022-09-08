@@ -1,7 +1,21 @@
 spring:
   profiles:
-    active: EN, cat, dev
+    active:
+        - EN
+        - cat
+        - dev
 blinets:
   username: pavel
   password: Blinets
   jdbcurl: MyUrl
+
+#'prod'
+---
+spring:
+  profiles:
+    active:
+      on-profile: prod
+blinets:
+  username: pavel-PROD
+  password: Blinets-PROD
+  jdbcurl: MyUrl-PROD
