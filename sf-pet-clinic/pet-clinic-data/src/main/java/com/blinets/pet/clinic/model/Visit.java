@@ -5,12 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Vet extends Person {
-    private Set<Speciality> specialities;
+public class Visit extends BaseEntity {
+
+    private LocalDate date;
+    private String description;
+    private Pet pet;
 }
