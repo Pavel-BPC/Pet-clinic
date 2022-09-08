@@ -6,7 +6,6 @@ import com.blinets.dependency.injection.repositories.GreetingRepository;
 import com.blinets.dependency.injection.services.greeting.*;
 import com.blinets.dependency.injection.services.pet.PetService;
 import com.blinets.dependency.injection.services.pet.PetServiceFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -15,14 +14,17 @@ import org.springframework.context.annotation.*;
 public class GreetingServiceConfiguration {
 
 
+//    @Bean
+//    FakeDataSource fakeDataSource(@Value("${blinets.username}") String username,
+//                                  @Value("${blinets.password}") String password,
+//                                  @Value("${blinets.jdbcurl}") String jdbcurl) {
+//
     @Bean
-    FakeDataSource fakeDataSource(@Value("${blinets.username}") String username,
-                                  @Value("${blinets.password}") String password,
-                                  @Value("${blinets.jdbcurl}") String jdbcurl) {
+    FakeDataSource fakeDataSource(PropertiesBindingConfiguration propertiesBindingConfiguration) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcUrl(jdbcurl);
+        fakeDataSource.setUsername(propertiesBindingConfiguration.getUsername());
+        fakeDataSource.setPassword(propertiesBindingConfiguration.getPassword());
+        fakeDataSource.setJdbcUrl(propertiesBindingConfiguration.getJdbcUrl());
         return fakeDataSource;
     }
 

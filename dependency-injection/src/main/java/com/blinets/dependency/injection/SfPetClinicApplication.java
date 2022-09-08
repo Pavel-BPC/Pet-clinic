@@ -1,5 +1,6 @@
 package com.blinets.dependency.injection;
 
+import com.blinets.dependency.injection.configuration.PropertiesBindingConfiguration;
 import com.blinets.dependency.injection.controllers.*;
 import com.blinets.dependency.injection.datasource.FakeDataSource;
 import com.blinets.dependency.injection.services.scope.PrototypeBean;
@@ -56,6 +57,12 @@ public class SfPetClinicApplication {
         System.out.println(fakeDataSource.getUsername());
         System.out.println(fakeDataSource.getPassword());
         System.out.println(fakeDataSource.getJdbcUrl());
+
+        System.out.println("---- PropertiesBindingConfiguration ---------");
+        PropertiesBindingConfiguration propertiesBindingConfiguration = ctx.getBean(PropertiesBindingConfiguration.class);
+        System.out.println(propertiesBindingConfiguration.getUsername());
+        System.out.println(propertiesBindingConfiguration.getPassword());
+        System.out.println(propertiesBindingConfiguration.getJdbcUrl());
 
     }
 
