@@ -1,6 +1,7 @@
 package com.blinets.dependency.injection;
 
 import com.blinets.dependency.injection.controllers.*;
+import com.blinets.dependency.injection.datasource.FakeDataSource;
 import com.blinets.dependency.injection.services.scope.PrototypeBean;
 import com.blinets.dependency.injection.services.scope.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -49,6 +50,12 @@ public class SfPetClinicApplication {
         System.out.println(prototypeBean1.getMyScope());
         PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
         System.out.println(prototypeBean2.getMyScope());
+
+        System.out.println("---- FakeDataSource ---------");
+        FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUsername());
+        System.out.println(fakeDataSource.getPassword());
+        System.out.println(fakeDataSource.getJdbcUrl());
 
     }
 

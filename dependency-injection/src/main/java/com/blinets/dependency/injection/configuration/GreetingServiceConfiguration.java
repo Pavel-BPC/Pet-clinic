@@ -1,16 +1,30 @@
 package com.blinets.dependency.injection.configuration;
 
+import com.blinets.dependency.injection.datasource.FakeDataSource;
 import com.blinets.dependency.injection.repositories.GreetingEnglishRepositoryImpl;
 import com.blinets.dependency.injection.repositories.GreetingRepository;
 import com.blinets.dependency.injection.services.greeting.*;
 import com.blinets.dependency.injection.services.pet.PetService;
 import com.blinets.dependency.injection.services.pet.PetServiceFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
 @Configuration
 @ImportResource("classpath:bean-config.xml")
+@PropertySource("classpath:datasource.properties")
 public class GreetingServiceConfiguration {
 
+
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${blinets.username}") String username,
+                                  @Value("${blinets.password}") String password,
+                                  @Value("${blinets.jdbcurl}") String jdbcurl) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(username);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setJdbcUrl(jdbcurl);
+        return fakeDataSource;
+    }
 
     @Bean
     PetServiceFactory petServiceFactory() {
